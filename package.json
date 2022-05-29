@@ -2,7 +2,7 @@
   "name": "first-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://daryagrygorova/my-practics-react/",
+  "homepage": "https://daryagrygorova.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
