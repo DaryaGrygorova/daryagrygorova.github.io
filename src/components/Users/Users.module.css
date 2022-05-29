@@ -1,0 +1,72 @@
+.container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 91vh;
+    overflow-y: scroll;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding: 15px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba(148, 0, 211, .1);
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.photo {
+    width: 80px;
+    height: 80px;
+    padding: 1px;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 1px solid #e0e5f3;
+    overflow: hidden;
+}
+
+.name {
+    font-size: 20px;
+    flex-grow: 1;
+}
+
+.text {
+    text-indent: 20px;
+}
+
+.buttonSet {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pageNumbList {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 5px auto;
+}
+
+.pageNumb {
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.pageNumb:not(:last-child) {
+    margin-right: 20px;
+}
+
+.selected {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+
+

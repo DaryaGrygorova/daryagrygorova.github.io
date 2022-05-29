@@ -1,0 +1,33 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    grid-area: sidebar;
+    position: sticky;
+    top: 0;
+    height: 91vh;
+    padding: 15px;
+    background-color: rgba(138, 43, 226, .5);
+    margin-right: 5px;
+}
+
+.item {
+    padding: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(55, 7, 62);
+    transition: color 250ms linear, font-size 250ms linear;
+}
+
+.item:hover,
+.item:focus {
+    font-size: 30px;
+    color: bisque
+}
+
+.item:not(:last-child) {
+    border-bottom: 2px solid #8a2be2;
+}
+
+.settings {
+    margin-top: auto;
+}

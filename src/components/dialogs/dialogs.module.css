@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    padding-left: 15px;
+    height: 90vh;
+}
+
+.title {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 900;
+    color: black;
+}
+
+.contacts {
+    flex-basis: 30%;
+}
+
+.line {
+    display: block;
+    width: 2px;
+    height: 85vh;
+    background-color: #e0e5f3;
+}
+
+.wrapper {
+    flex-grow: 1;
+}

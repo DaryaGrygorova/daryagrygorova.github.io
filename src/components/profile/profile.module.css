@@ -1,0 +1,15 @@
+.wrapper {
+    padding: 15px;
+}
+
+.item {
+    padding: 10px 10px;
+}
+
+.item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.item:nth-child(2n) {
+    background-color: rgba(224, 229, 243, .5);
+}

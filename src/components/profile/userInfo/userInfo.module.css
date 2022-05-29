@@ -1,0 +1,60 @@
+.wrapper {
+    height: 300px;
+    object-fit: cover ;
+}
+
+.thumb {
+    position: relative;
+    display: flex;
+    padding: 15px;
+    min-height: 165px;
+    background-color: #e0e5f3;
+}
+
+.photo {
+    position: absolute;
+    top: -50px;
+    width: 180px;
+    padding: 2px;
+    border: 1px solid rgba(255, 255, 255, .8)
+}
+
+.description {
+    margin-left: 230px;
+}
+
+.name {
+    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: 900;
+    color: black;
+}
+
+.about {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: rgba(40, 44, 52, .8);
+    font-style: italic;
+}
+
+.status {
+    display: block;
+    max-width: 100%;
+    min-height: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+    font-style: italic;
+    border-bottom: 1px solid #b1b7c5;
+}
+
+.input, .input:focus-within, .input:focus {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    max-width: 100%;
+    border: 1px solid #b1b7c5;
+    border-radius: 4px;
+    font-size: 20px;
+}
+

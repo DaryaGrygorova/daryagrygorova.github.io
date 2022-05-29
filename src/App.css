@@ -1,0 +1,110 @@
+.App-wrapper {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 1.17;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.currentPage {
+  font-size: 30px;
+  color: rgb(249, 208, 157);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  min-width: 150px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(93, 43, 177);
+  background-color: rgba(138, 43, 226, 0.5);
+  border-radius: 4px;
+  transition: color 250ms linear;
+}
+
+.button:hover,
+.button:focus {
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 3px 1px rgb(0 0 0 / 10%), 0 1px 2px rgb(0 0 0 / 8%), 0 2px 2px rgb(0 0 0 / 12%);
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 1200px;
+}
+
+.main-container {
+  display: grid;
+  grid-template-areas: 'sidebar content';
+  grid-template-rows: 1fr;
+  grid-template-columns: 210px auto;
+  position: relative;
+  margin: 75px auto 0;
+  padding: 0 15px;
+  width: 1200px;
+}
+
+/* Логотип */
+.logo {
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.logo__img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo__text {
+  font-size: 30px;
+  font-weight: 900;
+  margin-left: 20px;
+}
+
+.content {
+  grid-area: content;
+}
+
+.loader {
+  margin: 20px 20px;
+}
+
+/* Футер */
+.footer {
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: rgb(224, 229, 243);
+}
