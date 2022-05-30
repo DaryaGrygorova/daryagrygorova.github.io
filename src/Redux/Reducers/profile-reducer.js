@@ -4,7 +4,9 @@ const ADD_POST = 'PROFILE/ADD-POST';
 const DELETE_POST = 'PROFILE/DELETE_POST';
 const SET_USER_PROFILE = "PROFILE/SET_USER_PROFILE";
 const SET_USER_ID = "PROFILE/SET_USER_ID";
+const TOGGLE_IS_REQUESTS_IN_PROGRESS = "PROFILE/TOGGLE_IS_REQUESTS_IN_PROGRESS"
 const TOGGLE_IS_FETCHING_PROFILE = "PROFILE/TOGGLE_IS_FETCHING_PROFILE"
+
 const SET_STATUS = "PROFILE/SET_STATUS";
 
 let initialState = {
@@ -15,7 +17,8 @@ let initialState = {
   ],
   Profile: null,
   UserID: null,
-  isFetching: true,
+  isFetching: false,
+  isRequestsInProgress: false,
   status: "",
 
 };
@@ -44,6 +47,7 @@ export const profileReducer = (state = initialState, action) => {
     case SET_USER_ID: {
       return {...state,
         UserID: action.userID,
+        
       }
     }
 
@@ -52,7 +56,15 @@ export const profileReducer = (state = initialState, action) => {
       return {...state,
         isFetching: action.isFetching,
       }
-    }
+      }
+      
+    case TOGGLE_IS_REQUESTS_IN_PROGRESS:
+      {
+        return {
+          ...state,
+          isRequestsInProgress: action.isRequestsInProgress,
+        }
+      }
 
     case SET_STATUS: {
       return {
@@ -70,22 +82,26 @@ export let addPost = (NewPostText) => ({type: ADD_POST, NewPostText});
 export let deletePost= (postId) => ({type: DELETE_POST, postId});
 export const setUserID = (userID) =>({type: SET_USER_ID, userID});
 export const toggleIsFetchingProfile = (isFetching) =>({type: TOGGLE_IS_FETCHING_PROFILE, isFetching});
-export const setStatus = (status) =>({type: SET_STATUS, status});
+export const toggleIsRequestsInProgress = (isRequestsInProgress) =>({type: TOGGLE_IS_REQUESTS_IN_PROGRESS, isRequestsInProgress});
+export const setStatus = (status) => ({ type: SET_STATUS, status });
 
 
 export const getProfileThunkCreator = (userId) => {
   return async (dispatch) => {
     dispatch(toggleIsFetchingProfile(true));
     let response = await ProfileAPI.getProfile(userId)
-        dispatch(toggleIsFetchingProfile(false));
-        dispatch(setUserProfile(response.data, userId));
+    dispatch(setUserProfile(response.data, userId));
+    dispatch(toggleIsFetchingProfile(false));
   };
 };
 
 export const getStatusThunkCreator = (userID) => {
   return async (dispatch) => {
+        dispatch(toggleIsRequestsInProgress(true));
     let response = await ProfileAPI.getStatus(userID)
-      dispatch(setStatus(response.data));
+    dispatch(setStatus(response.data));
+        dispatch(toggleIsRequestsInProgress(false));
+
   };
 };
 
@@ -98,3 +114,4 @@ export const updateStatusThunkCreator = (status) => {
         };
   };
 };
+
